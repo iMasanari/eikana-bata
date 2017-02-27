@@ -9,7 +9,8 @@ import Cocoa
 
 class ViewController: NSViewController {
     @IBOutlet weak var toggleVisibleIconButton: NSButton!
-    @IBOutlet weak var toggleLaunchButton: NSButton!
+    @IBOutlet weak var toggleAutoLaunchButton: NSButton!
+    @IBOutlet weak var toggleCheckUpdateButton: NSButton!
     
     let userDefaults = UserDefaults.standard
     let launcher = LaunchAtStartup()
@@ -20,7 +21,8 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         
         toggleVisibleIconButton.state = userDefaults.integer(forKey: "visibleIcon")
-        toggleLaunchButton.state = launcher.isStartupItem() ? NSOnState : NSOffState
+        toggleAutoLaunchButton.state = launcher.isStartupItem() ? NSOnState : NSOffState
+        toggleCheckUpdateButton.state = userDefaults.integer(forKey: "checkUpdate")
     }
     
     override var representedObject: Any? {
@@ -33,7 +35,11 @@ class ViewController: NSViewController {
         StatusMenu.setVisibleIcon(toggleVisibleIconButton.state == NSOnState)
     }
 
-    @IBAction func changeLaunchButton(_ sender: Any) {
-        launcher.setLaunchAtStartup(toggleLaunchButton.state == NSOnState)
+    @IBAction func changeAutoLaunchButton(_ sender: Any) {
+        launcher.setLaunchAtStartup(toggleAutoLaunchButton.state == NSOnState)
+    }
+    
+    @IBAction func changeCheckUpdateButton(_ sender: Any) {
+        userDefaults.set(toggleCheckUpdateButton.state, forKey: "checkUpdate")
     }
 }

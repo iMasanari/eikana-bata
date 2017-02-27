@@ -709,7 +709,7 @@
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfW-Hw-5ZK">
                                 <rect key="frame" x="18" y="234" width="191" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="メニューバーにアイコンを表示" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="zRB-KY-4EX">
+                                <buttonCell key="cell" type="check" title="メニューバーにアイコンを表示" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zRB-KY-4EX">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
@@ -720,21 +720,24 @@
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ajJ-Aq-bwu">
                                 <rect key="frame" x="18" y="214" width="191" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="ログイン後にこのアプリを起動" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ItS-5z-FY4">
+                                <buttonCell key="cell" type="check" title="ログイン後にこのアプリを起動" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ItS-5z-FY4">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="changeLaunchButton:" target="XfG-lQ-9wD" id="EQ3-os-gT5"/>
+                                    <action selector="changeAutoLaunchButton:" target="XfG-lQ-9wD" id="zpL-4Z-tGa"/>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Jz-rX-QpE">
                                 <rect key="frame" x="18" y="194" width="179" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="起動後にアップデートを確認" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="Ayp-rN-Y7m">
+                                <buttonCell key="cell" type="check" title="起動後にアップデートを確認" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Ayp-rN-Y7m">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="changeCheckUpdateButton:" target="XfG-lQ-9wD" id="lC0-Q7-TWf"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dgj-eN-ocL">
                                 <rect key="frame" x="317" y="185" width="149" height="32"/>
@@ -750,7 +753,8 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="toggleLaunchButton" destination="ajJ-Aq-bwu" id="1YJ-LE-nX7"/>
+                        <outlet property="toggleAutoLaunchButton" destination="ajJ-Aq-bwu" id="e63-LD-jk9"/>
+                        <outlet property="toggleCheckUpdateButton" destination="4Jz-rX-QpE" id="9yP-NP-3Lg"/>
                         <outlet property="toggleVisibleIconButton" destination="bfW-Hw-5ZK" id="eeZ-We-hjb"/>
                     </connections>
                 </viewController>
