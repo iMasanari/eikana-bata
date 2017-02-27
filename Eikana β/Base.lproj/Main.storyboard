@@ -655,7 +655,7 @@
                     </connections>
                 </application>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu title="Eikana β" systemMenu="apple" id="oVt-vn-EYm" customClass="StatusMenu" customModule="Eikana" customModuleProvider="target">
+                <menu title="Eikana β" systemMenu="apple" id="oVt-vn-EYm" customClass="StatusMenu" customModule="Eikana_β" customModuleProvider="target">
                     <items>
                         <menuItem title="About Eikana β" id="6Na-ec-s9D">
                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -676,14 +676,14 @@
                         </menuItem>
                     </items>
                 </menu>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Eikana" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Eikana_β" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController storyboardIdentifier="Preference" id="B8D-0N-5wS" customClass="PreferenceWindowController" customModule="Eikana" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Preference" id="B8D-0N-5wS" customClass="PreferenceWindowController" customModule="Eikana_β" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -701,7 +701,7 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Eikana" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Eikana_β" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -739,10 +739,13 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dgj-eN-ocL">
                                 <rect key="frame" x="317" y="185" width="149" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="アップデートを確認" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eCL-oj-Dym">
+                                <buttonCell key="cell" type="push" title="アップデートを確認" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eCL-oj-Dym">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="m3V-II-1Vd" id="rCa-i7-fNA"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
@@ -752,6 +755,7 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="m3V-II-1Vd" customClass="SUUpdater"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>

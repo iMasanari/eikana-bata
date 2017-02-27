@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Eikana β Changelog</title>
+    <link>https://imasanari.github.io/eikana-bata/appcast.xml</link>
+    <description>Eikana β update Changelog.</description>
+    <language>en</language>
+    <item>
+      <title>Eikana β 0.0.1</title>
+      <description>
+        <![CDATA[
+        <ul><li>Use sparkle for update.</li></ul>
+        ]]>
+      </description>
+      <pubDate>Tue Feb 28 2017 02:54:17 GMT+0900 (JST)</pubDate>
+      <enclosure url="https://github.com/iMasanari/eikana-bata/releases/download/v0.0.1/eikana-bata-0.0.1.app.zip"
+        sparkle:version="0.0.1"
+        length="3341747"
+        type="application/octet-stream"
+        sparkle:dsaSignature="MC0CFQCsRR4FrbXs1LYHy8yns4g9UhYNogIUFPfe8J9Q50xfff9F4pTezQA0qbg="
+      />
+    </item>
+  </channel>
+</rss>
