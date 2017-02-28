@@ -6,9 +6,11 @@
 //
 
 import Cocoa
+import IOKit.hid
 
 class KeyEvents: NSObject {
-    var keyLog: CGKeyCode?
+    var modifierLog: UInt32?
+    let hidManager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
     
     func start() {
         let checkOptionPrompt = kAXTrustedCheckOptionPrompt.takeRetainedValue() as NSString
@@ -36,82 +38,79 @@ class KeyEvents: NSObject {
     }
     
     func watch() {
-        let eventMaskList = [
-            CGEventType.keyDown,
-            CGEventType.keyUp,
-            CGEventType.flagsChanged,
-            CGEventType.leftMouseDown,
-            CGEventType.leftMouseUp,
-            CGEventType.rightMouseDown,
-            CGEventType.rightMouseUp,
-            CGEventType.otherMouseDown,
-            CGEventType.otherMouseUp,
-            CGEventType.scrollWheel,
-            // CGEventType.MouseMovedMask,
+        
+        // mouse event (use NSEvent)
+        
+        let mask: NSEventMask = [
+            .leftMouseDown,
+            .leftMouseUp,
+            .rightMouseDown,
+            .rightMouseUp,
+            .otherMouseDown,
+            .otherMouseUp,
+            .scrollWheel
         ]
         
-        let eventMask = eventMaskList.reduce(0) { (mask, value) -> UInt32 in
-            mask | (1 << value.rawValue)
+        NSEvent.addGlobalMonitorForEvents(matching: mask) {(event: NSEvent) -> Void in
+            self.modifierLog = nil
         }
         
-        let callback: CGEventTapCallBack = { (proxy, type, event, refcon) in
-            if let observer = refcon {
-                let mySelf = Unmanaged<KeyEvents>.fromOpaque(observer).takeUnretainedValue()
-                return mySelf.eventCallback(proxy: proxy, type: type, event: event)
+        NSEvent.addLocalMonitorForEvents(matching: mask) {(event: NSEvent) -> NSEvent? in
+            self.modifierLog = nil
+            return event
+        }
+        
+        
+        // key event (use HID)
+        
+        let match = [kIOHIDDeviceUsageKey: kHIDUsage_GD_Keyboard, kIOHIDDeviceUsagePageKey: kHIDPage_GenericDesktop] as NSMutableDictionary
+        
+        IOHIDManagerSetDeviceMatching(hidManager, match)
+        
+        let context = UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque());
+        
+        let keyboardCallback: IOHIDValueCallback = {(context, ioreturn, sender, value) in
+            if ioreturn != kIOReturnSuccess {
+                return
             }
-            return Unmanaged.passUnretained(event)
-        }
-        
-        let observer = UnsafeMutableRawPointer(Unmanaged.passRetained(self).toOpaque())
-        
-        guard let eventTap = CGEvent.tapCreate(tap: .cgSessionEventTap,
-                                               place: .headInsertEventTap,
-                                               options: .defaultTap,
-                                               eventsOfInterest: CGEventMask(eventMask),
-                                               callback: callback,
-                                               userInfo: observer)
+            
+            let element = IOHIDValueGetElement(value)
+            let scancode = IOHIDElementGetUsage(element)
+            
+            if (scancode < 4 || 231 < scancode) && !(scancode == 0x03 && IOHIDElementGetUsagePage(element) == 0xff /* fn key */) {
+                return
+            }
+            
+            let selfPtr = Unmanaged<KeyEvents>.fromOpaque(context!).takeUnretainedValue()
+            
+            if IOHIDValueGetIntegerValue(value) == 1 {
+                selfPtr.keyDown(scancode)
+            }
             else {
-                print("failed to create event tap")
-                exit(1)
+                selfPtr.keyUp(scancode)
+            }
         }
         
-        let runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0)
-        
-        CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, .commonModes)
-        CGEvent.tapEnable(tap: eventTap, enable: true)
-        CFRunLoopRun()
+        IOHIDManagerRegisterInputValueCallback(hidManager, keyboardCallback, context)
+        IOHIDManagerScheduleWithRunLoop(hidManager, CFRunLoopGetMain(), CFRunLoopMode.defaultMode!.rawValue)
+        IOHIDManagerOpen(hidManager, IOOptionBits(kIOHIDOptionsTypeNone))
     }
     
-    func eventCallback(proxy: CGEventTapProxy, type: CGEventType, event: CGEvent) -> Unmanaged<CGEvent>? {
-        let keyCode = CGKeyCode(event.getIntegerValueField(.keyboardEventKeycode))
-        
-        if type == CGEventType.flagsChanged {
-            if keyCode == 55 {
-                if isCommandDown(event.flags) {
-                    keyLog = keyCode
-                }
-                else if keyLog == keyCode {
-                    postKeyEvent(102)
-                }
-            }
-            else if keyCode == 54 {
-                if isCommandDown(event.flags) {
-                    keyLog = keyCode
-                }
-                else if keyLog == keyCode {
-                    postKeyEvent(104)
-                }
-            }
+    func keyDown(_ keyCode: UInt32) {
+        if keyCode == UInt32(kHIDUsage_KeyboardLeftGUI) || keyCode == UInt32(kHIDUsage_KeyboardRightGUI) {
+            self.modifierLog = keyCode
         }
         else {
-            keyLog = nil
+            self.modifierLog = nil
         }
-        
-        return Unmanaged.passUnretained(event)
     }
     
-    func isCommandDown(_ flags: CGEventFlags) -> Bool {
-        return flags.rawValue & CGEventFlags.maskCommand.rawValue != 0
+    func keyUp(_ keyCode: UInt32) {
+        if self.modifierLog == keyCode {
+            postKeyEvent(keyCode == UInt32(kHIDUsage_KeyboardLeftGUI) ? 102 : 104)
+        }
+        
+        self.modifierLog = nil
     }
     
     func postKeyEvent(_ keyCode: CGKeyCode) {
