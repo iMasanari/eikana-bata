@@ -12,6 +12,7 @@
 		625653161DC80F7B00DF0364 /* KeyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625653151DC80F7B00DF0364 /* KeyEvents.swift */; };
 		625653181DC864BE00DF0364 /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625653171DC864BE00DF0364 /* PreferenceWindowController.swift */; };
 		626983781E672A73009C1640 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626983771E672A73009C1640 /* Settings.swift */; };
+		6269837B1E673B7A009C1640 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6269837A1E673B7A009C1640 /* appcast.xml */; };
 		626DD3511E40517D005810F0 /* LaunchAtStartup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DD3501E40517D005810F0 /* LaunchAtStartup.swift */; };
 		62A5A0861E6346DD0067564C /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 62A5A0851E6346DD0067564C /* dsa_pub.pem */; };
 		62E17E671DBD7149008345D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E17E661DBD7149008345D9 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		625653151DC80F7B00DF0364 /* KeyEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyEvents.swift; sourceTree = "<group>"; };
 		625653171DC864BE00DF0364 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
 		626983771E672A73009C1640 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		6269837A1E673B7A009C1640 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		626DD3501E40517D005810F0 /* LaunchAtStartup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAtStartup.swift; sourceTree = "<group>"; };
 		62A5A0851E6346DD0067564C /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		62E17E631DBD7149008345D9 /* Eikana β.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eikana β.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,10 +69,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		626983791E673B7A009C1640 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				6269837A1E673B7A009C1640 /* appcast.xml */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
 		62E17E5A1DBD7149008345D9 = {
 			isa = PBXGroup;
 			children = (
 				62E17E651DBD7149008345D9 /* Eikana β */,
+				626983791E673B7A009C1640 /* docs */,
 				62E17E641DBD7149008345D9 /* Products */,
 				471C0594D58523B2C330D1B3 /* Pods */,
 				1D8A1B710AB880E09E1010FB /* Frameworks */,
@@ -167,6 +178,7 @@
 			files = (
 				62E17E6B1DBD7149008345D9 /* Assets.xcassets in Resources */,
 				62A5A0861E6346DD0067564C /* dsa_pub.pem in Resources */,
+				6269837B1E673B7A009C1640 /* appcast.xml in Resources */,
 				62E17E6E1DBD7149008345D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

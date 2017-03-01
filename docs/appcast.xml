@@ -6,6 +6,21 @@
     <description>Eikana β update Changelog.</description>
     <language>en</language>
     <item>
+        <title>Eikana β 0.1.0</title>
+        <description>
+            <![CDATA[
+                <ul><li>Use IOKit.</li></ul>
+            ]]>
+        </description>
+        <pubDate>Thu Mar 02 2017 02:28:11 GMT+0900 (JST)</pubDate>
+        <enclosure url="https://github.com/iMasanari/eikana-bata/releases/download/v0.1.0/eikana-bata-0.1.0.app.zip"
+        sparkle:version="0.1.0"
+        length="3344817"
+        type="application/octet-stream"
+        sparkle:dsaSignature="MC0CFFMAdZCwHTTz/sP0BemTx8qkyy2nAhUAv3xNZIK4wFy21Z3jxFzdFNIkC2w="
+        />
+    </item>
+    <item>
       <title>Eikana β 0.0.2</title>
       <description>
         <![CDATA[
