@@ -11,6 +11,7 @@
 		625653141DC7AD2D00DF0364 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625653131DC7AD2D00DF0364 /* StatusMenu.swift */; };
 		625653161DC80F7B00DF0364 /* KeyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625653151DC80F7B00DF0364 /* KeyEvents.swift */; };
 		625653181DC864BE00DF0364 /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625653171DC864BE00DF0364 /* PreferenceWindowController.swift */; };
+		626983781E672A73009C1640 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626983771E672A73009C1640 /* Settings.swift */; };
 		626DD3511E40517D005810F0 /* LaunchAtStartup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DD3501E40517D005810F0 /* LaunchAtStartup.swift */; };
 		62A5A0861E6346DD0067564C /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 62A5A0851E6346DD0067564C /* dsa_pub.pem */; };
 		62E17E671DBD7149008345D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E17E661DBD7149008345D9 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 		625653131DC7AD2D00DF0364 /* StatusMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
 		625653151DC80F7B00DF0364 /* KeyEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyEvents.swift; sourceTree = "<group>"; };
 		625653171DC864BE00DF0364 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
+		626983771E672A73009C1640 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		626DD3501E40517D005810F0 /* LaunchAtStartup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAtStartup.swift; sourceTree = "<group>"; };
 		62A5A0851E6346DD0067564C /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		62E17E631DBD7149008345D9 /* Eikana β.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eikana β.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				625653171DC864BE00DF0364 /* PreferenceWindowController.swift */,
 				625653131DC7AD2D00DF0364 /* StatusMenu.swift */,
 				626DD3501E40517D005810F0 /* LaunchAtStartup.swift */,
+				626983771E672A73009C1640 /* Settings.swift */,
 				62E17E6F1DBD7149008345D9 /* Info.plist */,
 				62A5A0851E6346DD0067564C /* dsa_pub.pem */,
 			);
@@ -227,6 +230,7 @@
 				626DD3511E40517D005810F0 /* LaunchAtStartup.swift in Sources */,
 				625653161DC80F7B00DF0364 /* KeyEvents.swift in Sources */,
 				62E17E691DBD7149008345D9 /* ViewController.swift in Sources */,
+				626983781E672A73009C1640 /* Settings.swift in Sources */,
 				62E17E671DBD7149008345D9 /* AppDelegate.swift in Sources */,
 				625653141DC7AD2D00DF0364 /* StatusMenu.swift in Sources */,
 			);

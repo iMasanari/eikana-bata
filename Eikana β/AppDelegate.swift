@@ -18,12 +18,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         
         keyEvents.start()
-        let userDefaults = UserDefaults.standard
+        
         let updater = SUUpdater.shared()!
         
         updater.feedURL = URL(string: "https://imasanari.github.io/eikana-bata/appcast.xml")
         
-        if userDefaults.integer(forKey: "checkUpdate") == 1 {
+        if Settings.get("checkUpdate", defaultValue: 1) == 1 {
             updater.checkForUpdatesInBackground()
         }
     }
@@ -36,9 +36,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         preference.showAndActivate(sender)
         
         return false
-    }
-    
-    func stopKeyEvent() {
-        
     }
 }

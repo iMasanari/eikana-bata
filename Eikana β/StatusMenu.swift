@@ -19,7 +19,7 @@ class StatusMenu: NSMenu {
             setVisibleIconOfElCapitan(state)
         }
         
-        UserDefaults.standard.set(state, forKey: "visibleIcon")
+        Settings.set("visibleIcon", value: state)
     }
     
     static func setVisibleIconOfElCapitan(_ state: Bool) {
@@ -53,7 +53,7 @@ class StatusMenu: NSMenu {
             StatusMenu.createMenu()
         }
         
-        StatusMenu.setVisibleIcon(UserDefaults.standard.integer(forKey: "visibleIcon") == 1)
+        StatusMenu.setVisibleIcon(Settings.get("visibleIcon", defaultValue: 1) == 1)
     }
     
     @IBAction func showAbout(_ sender: Any) {

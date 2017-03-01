@@ -20,9 +20,9 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         
-        toggleVisibleIconButton.state = userDefaults.integer(forKey: "visibleIcon")
+        toggleVisibleIconButton.state = Settings.get("visibleIcon", defaultValue: 1)
         toggleAutoLaunchButton.state = launcher.isStartupItem() ? NSOnState : NSOffState
-        toggleCheckUpdateButton.state = userDefaults.integer(forKey: "checkUpdate")
+        toggleCheckUpdateButton.state = Settings.get("checkUpdate", defaultValue: 1)
     }
     
     override var representedObject: Any? {
@@ -40,6 +40,6 @@ class ViewController: NSViewController {
     }
     
     @IBAction func changeCheckUpdateButton(_ sender: Any) {
-        userDefaults.set(toggleCheckUpdateButton.state, forKey: "checkUpdate")
+        Settings.set("checkUpdate", value: toggleCheckUpdateButton.state)
     }
 }
