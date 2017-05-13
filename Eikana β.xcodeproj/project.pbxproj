@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		40A0DB6360B53DD6FB5FAD67 /* Pods_Eikana__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9590A24281C0721A6BA5378D /* Pods_Eikana__.framework */; };
+		62383B061E7CCF550062DE24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62383B051E7CCF550062DE24 /* AppDelegate.m */; };
+		62383B091E7CCF550062DE24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62383B081E7CCF550062DE24 /* main.m */; };
+		62383B0B1E7CCF550062DE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62383B0A1E7CCF550062DE24 /* Assets.xcassets */; };
+		62383B0E1E7CCF550062DE24 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62383B0C1E7CCF550062DE24 /* MainMenu.xib */; };
+		62383B141E7CD1900062DE24 /* eikana-bata-helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 62383B021E7CCF550062DE24 /* eikana-bata-helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		625653141DC7AD2D00DF0364 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625653131DC7AD2D00DF0364 /* StatusMenu.swift */; };
 		625653161DC80F7B00DF0364 /* KeyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625653151DC80F7B00DF0364 /* KeyEvents.swift */; };
 		625653181DC864BE00DF0364 /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625653171DC864BE00DF0364 /* PreferenceWindowController.swift */; };
@@ -21,7 +26,27 @@
 		62E17E6E1DBD7149008345D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E17E6C1DBD7149008345D9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		62383B131E7CD16F0062DE24 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				62383B141E7CD1900062DE24 /* eikana-bata-helper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		62383B021E7CCF550062DE24 /* eikana-bata-helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eikana-bata-helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62383B041E7CCF550062DE24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		62383B051E7CCF550062DE24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		62383B081E7CCF550062DE24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		62383B0A1E7CCF550062DE24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		62383B0D1E7CCF550062DE24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		62383B0F1E7CCF550062DE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		625653131DC7AD2D00DF0364 /* StatusMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
 		625653151DC80F7B00DF0364 /* KeyEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyEvents.swift; sourceTree = "<group>"; };
 		625653171DC864BE00DF0364 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
@@ -41,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		62383AFF1E7CCF550062DE24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		62E17E601DBD7149008345D9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,6 +101,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		62383B031E7CCF550062DE24 /* eikana-bata-helper */ = {
+			isa = PBXGroup;
+			children = (
+				62383B041E7CCF550062DE24 /* AppDelegate.h */,
+				62383B051E7CCF550062DE24 /* AppDelegate.m */,
+				62383B0A1E7CCF550062DE24 /* Assets.xcassets */,
+				62383B0C1E7CCF550062DE24 /* MainMenu.xib */,
+				62383B0F1E7CCF550062DE24 /* Info.plist */,
+				62383B071E7CCF550062DE24 /* Supporting Files */,
+			);
+			path = "eikana-bata-helper";
+			sourceTree = "<group>";
+		};
+		62383B071E7CCF550062DE24 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				62383B081E7CCF550062DE24 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		626983791E673B7A009C1640 /* docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				62E17E651DBD7149008345D9 /* Eikana β */,
+				62383B031E7CCF550062DE24 /* eikana-bata-helper */,
 				626983791E673B7A009C1640 /* docs */,
 				62E17E641DBD7149008345D9 /* Products */,
 				471C0594D58523B2C330D1B3 /* Pods */,
@@ -92,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				62E17E631DBD7149008345D9 /* Eikana β.app */,
+				62383B021E7CCF550062DE24 /* eikana-bata-helper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +172,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		62383B011E7CCF550062DE24 /* eikana-bata-helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62383B121E7CCF550062DE24 /* Build configuration list for PBXNativeTarget "eikana-bata-helper" */;
+			buildPhases = (
+				62383AFE1E7CCF550062DE24 /* Sources */,
+				62383AFF1E7CCF550062DE24 /* Frameworks */,
+				62383B001E7CCF550062DE24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "eikana-bata-helper";
+			productName = "eikana-bata-helper";
+			productReference = 62383B021E7CCF550062DE24 /* eikana-bata-helper.app */;
+			productType = "com.apple.product-type.application";
+		};
 		62E17E621DBD7149008345D9 /* Eikana β */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62E17E721DBD7149008345D9 /* Build configuration list for PBXNativeTarget "Eikana β" */;
@@ -127,6 +199,7 @@
 				62E17E611DBD7149008345D9 /* Resources */,
 				C7F5507A2D0CFA19F4B0D62B /* [CP] Embed Pods Frameworks */,
 				ADCEDECDAD48C80B28E92CBF /* [CP] Copy Pods Resources */,
+				62383B131E7CD16F0062DE24 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -147,6 +220,10 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = iMasanari;
 				TargetAttributes = {
+					62383B011E7CCF550062DE24 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					62E17E621DBD7149008345D9 = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
@@ -167,11 +244,21 @@
 			projectRoot = "";
 			targets = (
 				62E17E621DBD7149008345D9 /* Eikana β */,
+				62383B011E7CCF550062DE24 /* eikana-bata-helper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		62383B001E7CCF550062DE24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62383B0B1E7CCF550062DE24 /* Assets.xcassets in Resources */,
+				62383B0E1E7CCF550062DE24 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		62E17E611DBD7149008345D9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +321,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		62383AFE1E7CCF550062DE24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62383B091E7CCF550062DE24 /* main.m in Sources */,
+				62383B061E7CCF550062DE24 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		62E17E5F1DBD7149008345D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,6 +347,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		62383B0C1E7CCF550062DE24 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62383B0D1E7CCF550062DE24 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		62E17E6C1DBD7149008345D9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -262,6 +366,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		62383B101E7CCF550062DE24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "eikana-bata-helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.imasanari.eikana-bata-helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		62383B111E7CCF550062DE24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "eikana-bata-helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.imasanari.eikana-bata-helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		62E17E701DBD7149008345D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -385,6 +515,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		62383B121E7CCF550062DE24 /* Build configuration list for PBXNativeTarget "eikana-bata-helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62383B101E7CCF550062DE24 /* Debug */,
+				62383B111E7CCF550062DE24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		62E17E5E1DBD7149008345D9 /* Build configuration list for PBXProject "Eikana β" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

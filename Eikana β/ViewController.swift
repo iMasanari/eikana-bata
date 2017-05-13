@@ -13,7 +13,6 @@ class ViewController: NSViewController {
     @IBOutlet weak var toggleCheckUpdateButton: NSButton!
     
     let userDefaults = UserDefaults.standard
-    let launcher = LaunchAtStartup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         
         toggleVisibleIconButton.state = Settings.get("visibleIcon", defaultValue: 1)
-        toggleAutoLaunchButton.state = launcher.isStartupItem() ? NSOnState : NSOffState
+        toggleAutoLaunchButton.state = Settings.get("autoLanch", defaultValue: 0)
         toggleCheckUpdateButton.state = Settings.get("checkUpdate", defaultValue: 1)
     }
     
@@ -36,7 +35,7 @@ class ViewController: NSViewController {
     }
 
     @IBAction func changeAutoLaunchButton(_ sender: Any) {
-        launcher.setLaunchAtStartup(toggleAutoLaunchButton.state == NSOnState)
+        setLaunchAtStartup(toggleAutoLaunchButton.state == NSOnState)
     }
     
     @IBAction func changeCheckUpdateButton(_ sender: Any) {
