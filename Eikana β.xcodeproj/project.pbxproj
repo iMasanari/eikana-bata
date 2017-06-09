@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40A0DB6360B53DD6FB5FAD67 /* Pods_Eikana__.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9590A24281C0721A6BA5378D /* Pods_Eikana__.framework */; };
 		62383B061E7CCF550062DE24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62383B051E7CCF550062DE24 /* AppDelegate.m */; };
 		62383B091E7CCF550062DE24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62383B081E7CCF550062DE24 /* main.m */; };
 		62383B0B1E7CCF550062DE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62383B0A1E7CCF550062DE24 /* Assets.xcassets */; };
@@ -20,6 +19,7 @@
 		6269837B1E673B7A009C1640 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6269837A1E673B7A009C1640 /* appcast.xml */; };
 		626DD3511E40517D005810F0 /* LaunchAtStartup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626DD3501E40517D005810F0 /* LaunchAtStartup.swift */; };
 		62A5A0861E6346DD0067564C /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 62A5A0851E6346DD0067564C /* dsa_pub.pem */; };
+		62B8DE841EEA635500C7BA2F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B8DE831EEA635500C7BA2F /* Sparkle.framework */; };
 		62E17E671DBD7149008345D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E17E661DBD7149008345D9 /* AppDelegate.swift */; };
 		62E17E691DBD7149008345D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E17E681DBD7149008345D9 /* ViewController.swift */; };
 		62E17E6B1DBD7149008345D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E17E6A1DBD7149008345D9 /* Assets.xcassets */; };
@@ -54,15 +54,13 @@
 		6269837A1E673B7A009C1640 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		626DD3501E40517D005810F0 /* LaunchAtStartup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAtStartup.swift; sourceTree = "<group>"; };
 		62A5A0851E6346DD0067564C /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		62B8DE831EEA635500C7BA2F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
 		62E17E631DBD7149008345D9 /* Eikana β.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eikana β.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E17E661DBD7149008345D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62E17E681DBD7149008345D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		62E17E6A1DBD7149008345D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62E17E6D1DBD7149008345D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62E17E6F1DBD7149008345D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9590A24281C0721A6BA5378D /* Pods_Eikana__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eikana__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B43648F5784FFB1175B80612 /* Pods-Eikana β.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eikana β.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eikana β/Pods-Eikana β.debug.xcconfig"; sourceTree = "<group>"; };
-		E1F3E528C2719CC65970092F /* Pods-Eikana β.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eikana β.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eikana β/Pods-Eikana β.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A0DB6360B53DD6FB5FAD67 /* Pods_Eikana__.framework in Frameworks */,
+				62B8DE841EEA635500C7BA2F /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,18 +85,9 @@
 		1D8A1B710AB880E09E1010FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9590A24281C0721A6BA5378D /* Pods_Eikana__.framework */,
+				62B8DE831EEA635500C7BA2F /* Sparkle.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		471C0594D58523B2C330D1B3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B43648F5784FFB1175B80612 /* Pods-Eikana β.debug.xcconfig */,
-				E1F3E528C2719CC65970092F /* Pods-Eikana β.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		62383B031E7CCF550062DE24 /* eikana-bata-helper */ = {
@@ -137,7 +126,6 @@
 				62383B031E7CCF550062DE24 /* eikana-bata-helper */,
 				626983791E673B7A009C1640 /* docs */,
 				62E17E641DBD7149008345D9 /* Products */,
-				471C0594D58523B2C330D1B3 /* Pods */,
 				1D8A1B710AB880E09E1010FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -193,13 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62E17E721DBD7149008345D9 /* Build configuration list for PBXNativeTarget "Eikana β" */;
 			buildPhases = (
-				1B5000EA4932B916B5417E17 /* [CP] Check Pods Manifest.lock */,
 				62E17E5F1DBD7149008345D9 /* Sources */,
 				62E17E601DBD7149008345D9 /* Frameworks */,
 				62E17E611DBD7149008345D9 /* Resources */,
-				C7F5507A2D0CFA19F4B0D62B /* [CP] Embed Pods Frameworks */,
-				ADCEDECDAD48C80B28E92CBF /* [CP] Copy Pods Resources */,
 				62383B131E7CD16F0062DE24 /* CopyFiles */,
+				62B8DE851EEA636E00C7BA2F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -273,50 +259,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B5000EA4932B916B5417E17 /* [CP] Check Pods Manifest.lock */ = {
+		62B8DE851EEA636E00C7BA2F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Sparkle.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		ADCEDECDAD48C80B28E92CBF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eikana β/Pods-Eikana β-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C7F5507A2D0CFA19F4B0D62B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eikana β/Pods-Eikana β-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -486,10 +441,13 @@
 		};
 		62E17E731DBD7149008345D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B43648F5784FFB1175B80612 /* Pods-Eikana β.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Eikana β/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.imasanari.eikana-bata";
@@ -500,10 +458,13 @@
 		};
 		62E17E741DBD7149008345D9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1F3E528C2719CC65970092F /* Pods-Eikana β.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Eikana β/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.imasanari.eikana-bata";
