@@ -6,7 +6,6 @@
 //
 
 import Cocoa
-import IOKit.hid
 
 class CGKeyboardEvent: NSObject {
     var keyEvents: KeyEvents {
@@ -27,7 +26,6 @@ class CGKeyboardEvent: NSObject {
         63: CGEventFlags.maskSecondaryFn,
         57: CGEventFlags.maskAlphaShift
     ]
-    
     
     func watch() {
         let eventMaskList = [
@@ -109,10 +107,11 @@ class CGKeyboardEvent: NSObject {
         
         if keyEvents.modifierLog == keyCode {
             switch (keyCode) {
-            case 55: keyEvents.postKeyEvent(102) // right command -> 英数
-            case 54: keyEvents.postKeyEvent(104) // left command -> かな
-            case 58: keyEvents.postMediaEvent(NX_KEYTYPE_SOUND_DOWN) //right option -> sound down
-            case 61: keyEvents.postMediaEvent(NX_KEYTYPE_SOUND_UP) // left option -> sound up
+            case 55: keyEvents.postKeyEvent(102) // left command -> 英数
+            case 54: keyEvents.postKeyEvent(104) // right command -> かな
+            case 59: keyEvents.toggleCapsLock() // left controle -> toggle capslock
+            case 58: keyEvents.postMediaEvent(NX_KEYTYPE_SOUND_DOWN) //left option -> sound down
+            case 61: keyEvents.postMediaEvent(NX_KEYTYPE_SOUND_UP) // right option -> sound up
             default: break
             }
         }

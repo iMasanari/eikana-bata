@@ -108,4 +108,38 @@ class KeyEvents: NSObject {
         createMediaEvent(key, down: true).post(tap: loc)
         createMediaEvent(key, down: false).post(tap: loc)
     }
+    
+    func toggleCapsLock(setStateOf: Bool? = nil) {
+        var state = setStateOf
+        
+        let mdict = IOServiceMatching(kIOHIDSystemClass) as NSMutableDictionary
+        let service = IOServiceGetMatchingService(kIOMasterPortDefault, mdict)
+        
+        if service == 0 {
+            return
+        }
+        
+        var connection: io_connect_t = 0
+        
+        let result = IOServiceOpen(service, mach_task_self_, UInt32(kIOHIDParamConnectType), &connection)
+        
+        IOObjectRelease(service)
+        
+        if result != kIOReturnSuccess {
+            return
+        }
+        
+        if state == nil {
+            var nowState = false
+            let result = IOHIDGetModifierLockState(connection, Int32(kIOHIDCapsLockState), &nowState)
+            
+            if result != kIOReturnSuccess { return }
+            
+            state = !nowState
+        }
+        
+        IOHIDSetModifierLockState(connection, Int32(kIOHIDCapsLockState), state!)
+        
+        IOServiceClose(connection)
+    }
 }
