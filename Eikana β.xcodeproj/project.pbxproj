@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622A54511EF124A70045717A /* CGKeyboardEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622A54501EF124A70045717A /* CGKeyboardEvent.swift */; };
+		622A54531EF124D00045717A /* HIDKeyboardEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622A54521EF124D00045717A /* HIDKeyboardEvent.swift */; };
 		62383B061E7CCF550062DE24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62383B051E7CCF550062DE24 /* AppDelegate.m */; };
 		62383B091E7CCF550062DE24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62383B081E7CCF550062DE24 /* main.m */; };
 		62383B0B1E7CCF550062DE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62383B0A1E7CCF550062DE24 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		622A54501EF124A70045717A /* CGKeyboardEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGKeyboardEvent.swift; path = KeyEvents/CGKeyboardEvent.swift; sourceTree = "<group>"; };
+		622A54521EF124D00045717A /* HIDKeyboardEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HIDKeyboardEvent.swift; path = KeyEvents/HIDKeyboardEvent.swift; sourceTree = "<group>"; };
 		62383B021E7CCF550062DE24 /* eikana-bata-helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eikana-bata-helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62383B041E7CCF550062DE24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		62383B051E7CCF550062DE24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,7 +52,7 @@
 		62383B0D1E7CCF550062DE24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		62383B0F1E7CCF550062DE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		625653131DC7AD2D00DF0364 /* StatusMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
-		625653151DC80F7B00DF0364 /* KeyEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyEvents.swift; sourceTree = "<group>"; };
+		625653151DC80F7B00DF0364 /* KeyEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyEvents.swift; path = KeyEvents/KeyEvents.swift; sourceTree = "<group>"; };
 		625653171DC864BE00DF0364 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
 		626983771E672A73009C1640 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		6269837A1E673B7A009C1640 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
@@ -88,6 +92,16 @@
 				62B8DE831EEA635500C7BA2F /* Sparkle.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		622A544F1EF124650045717A /* KeyEvents */ = {
+			isa = PBXGroup;
+			children = (
+				625653151DC80F7B00DF0364 /* KeyEvents.swift */,
+				622A54501EF124A70045717A /* CGKeyboardEvent.swift */,
+				622A54521EF124D00045717A /* HIDKeyboardEvent.swift */,
+			);
+			name = KeyEvents;
 			sourceTree = "<group>";
 		};
 		62383B031E7CCF550062DE24 /* eikana-bata-helper */ = {
@@ -143,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				62E17E661DBD7149008345D9 /* AppDelegate.swift */,
-				625653151DC80F7B00DF0364 /* KeyEvents.swift */,
+				622A544F1EF124650045717A /* KeyEvents */,
 				62E17E681DBD7149008345D9 /* ViewController.swift */,
 				62E17E6A1DBD7149008345D9 /* Assets.xcassets */,
 				62E17E6C1DBD7149008345D9 /* Main.storyboard */,
@@ -289,11 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				622A54511EF124A70045717A /* CGKeyboardEvent.swift in Sources */,
 				625653181DC864BE00DF0364 /* PreferenceWindowController.swift in Sources */,
 				626DD3511E40517D005810F0 /* LaunchAtStartup.swift in Sources */,
 				625653161DC80F7B00DF0364 /* KeyEvents.swift in Sources */,
 				62E17E691DBD7149008345D9 /* ViewController.swift in Sources */,
 				626983781E672A73009C1640 /* Settings.swift in Sources */,
+				622A54531EF124D00045717A /* HIDKeyboardEvent.swift in Sources */,
 				62E17E671DBD7149008345D9 /* AppDelegate.swift in Sources */,
 				625653141DC7AD2D00DF0364 /* StatusMenu.swift in Sources */,
 			);
