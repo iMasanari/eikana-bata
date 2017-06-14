@@ -97,23 +97,37 @@ class KeyEvents: NSObject {
     }
     
     func keyDown(_ keyCode: UInt32) {
-        if keyCode == UInt32(kHIDUsage_KeyboardLeftGUI) || keyCode == UInt32(kHIDUsage_KeyboardRightGUI) {
-            self.modifierLog = keyCode
-        }
-        else {
-            self.modifierLog = nil
-        }
+        #if DEBUG
+            print(keyCode)
+        #endif
+        
+        self.modifierLog = keyCode
     }
     
     func keyUp(_ keyCode: UInt32) {
-        if self.modifierLog == keyCode {
-            postKeyEvent(keyCode == UInt32(kHIDUsage_KeyboardLeftGUI) ? 102 : 104)
+        if let modifierLog = self.modifierLog {
+            switch (Int(modifierLog)) {
+            case kHIDUsage_KeyboardLeftGUI:
+                postKeyEvent(102) // 英数キー
+                
+            case kHIDUsage_KeyboardRightGUI:
+                postKeyEvent(104) // かなキー
+                
+            case kHIDUsage_KeyboardLeftAlt:
+                postSystemEvent(NX_KEYTYPE_SOUND_DOWN)
+                
+            case kHIDUsage_KeyboardRightAlt:
+                postSystemEvent(NX_KEYTYPE_SOUND_UP)
+                
+            default: break
+            }
         }
+        
         
         self.modifierLog = nil
     }
     
-    func postKeyEvent(_ keyCode: CGKeyCode) {
+    private func postKeyEvent(_ keyCode: CGKeyCode) {
         let loc = CGEventTapLocation.cghidEventTap
         let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)!
         let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)!
@@ -123,5 +137,33 @@ class KeyEvents: NSObject {
         
         keyDownEvent.post(tap: loc)
         keyUpEvent.post(tap: loc)
+    }
+    
+    private func createMediaEvent(_ key: Int32, down: Bool) -> CGEvent {
+        let flags = NSEventModifierFlags(rawValue: down ? 0xa00 : 0xb00)
+        let data1 = (Int(key) << 16) | ((down ? 0xa : 0xb) << 8)
+        
+        let ev = NSEvent.otherEvent(
+            with: NSEventType.systemDefined,
+            location: NSPoint(x:0.0, y:0.0),
+            modifierFlags: flags,
+            timestamp: TimeInterval(0),
+            windowNumber: 0,
+            context: nil,
+            // context: 0,
+            subtype: 8,
+            data1: data1,
+            data2: -1
+        )
+        
+        return ev!.cgEvent!
+        
+    }
+    
+    private func postSystemEvent(_ key: Int32) {
+        let loc = CGEventTapLocation.cghidEventTap
+        
+        createMediaEvent(key, down: true).post(tap: loc)
+        createMediaEvent(key, down: false).post(tap: loc)
     }
 }
